@@ -107,6 +107,7 @@ app.post('/productos', verificaToken, (req, res) => {
         nombre: body.nombre,
         precioUni: body.precioUni,
         descripcion: body.descripcion,
+        //img: body.img,
         disponible: body.disponible,
         categoria: body.categoria,
         usuario: req.usuario._id
@@ -157,6 +158,7 @@ app.put('/productos/:id', verificaToken, (req, res) => {
         productoDB.categoria = body.categoria;
         productoDB.disponible = body.disponible;
         productoDB.descripcion = body.descripcion;
+        //productoDB.img = body.img;
 
         productoDB.save((err, productoGuardado) => {
             if (err) {
